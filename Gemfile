@@ -45,8 +45,6 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  # For calling ChatGPT API
-  gem 'httparty'
+  # For calling HTTP REST APIs
+  gem "httparty"
 end
-
-
