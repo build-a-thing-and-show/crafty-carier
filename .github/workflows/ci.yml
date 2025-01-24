@@ -18,7 +18,6 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-          ruby-version-file: .ruby-version
 
       - name: Make Brakeman script executable
         run: chmod +x bin/brakeman
@@ -37,7 +36,6 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-          ruby-version-file: .ruby-version
 
       - name: Make Rubocop script executable
         run: chmod +x bin/rubocop
@@ -66,7 +64,6 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-          ruby-version-file: .ruby-version
 
       - name: Make Rails script executable
         run: chmod +x bin/rails
