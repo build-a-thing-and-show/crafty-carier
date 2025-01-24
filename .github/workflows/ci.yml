@@ -18,18 +18,12 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-      
-      - name: Verify Ruby installation
-        run: ruby -v
 
-      - name: Install brakeman
-        run: gem install brakeman
+      - name: Install dependencies
+        run: bundle install
 
-      - name: Make Brakeman script executable
-        run: chmod +x bin/brakeman
-
-      - name: Scan for common Rails security vulnerabilities using static analysis
-        run: bin/brakeman --no-pager
+      - name: Scan for common Rails security vulnerabilities
+        run: bundle exec brakeman --no-pager
 
   lint:
     runs-on: ubuntu-latest
@@ -43,14 +37,11 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Verify Ruby installation
-        run: ruby -v
+      - name: Install dependencies
+        run: bundle install
 
-      - name: Make Rubocop script executable
-        run: chmod +x bin/rubocop
-
-      - name: Lint code for consistent style
-        run: bin/rubocop -f github
+      - name: Run RuboCop
+        run: bundle exec rubocop -f github
 
   test:
     runs-on: ubuntu-latest
@@ -74,11 +65,8 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Verify Ruby installation
-        run: ruby -v
-
-      - name: Make Rails script executable
-        run: chmod +x bin/rails
+      - name: Install dependencies
+        run: bundle install
 
       - name: Run tests
         env:
