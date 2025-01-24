@@ -18,6 +18,9 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+      
+      - name: Install brakeman
+        run: gem install brakeman
 
       - name: Make Brakeman script executable
         run: chmod +x bin/brakeman
