@@ -19,6 +19,9 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
       
+      - name: Verify Ruby installation
+        run: ruby -v
+
       - name: Install brakeman
         run: gem install brakeman
 
@@ -39,6 +42,9 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+
+      - name: Verify Ruby installation
+        run: ruby -v
 
       - name: Make Rubocop script executable
         run: chmod +x bin/rubocop
@@ -67,6 +73,9 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+
+      - name: Verify Ruby installation
+        run: ruby -v
 
       - name: Make Rails script executable
         run: chmod +x bin/rails
