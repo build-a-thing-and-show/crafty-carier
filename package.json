@@ -1,0 +1,12 @@
+{
+  "name": "crafty-carier",
+  "version": "1.0.0",
+  "description": "The service for crafty-carier applicion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
